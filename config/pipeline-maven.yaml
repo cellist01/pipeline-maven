@@ -9,6 +9,7 @@ spec:
   tasks:
     - name: fetch-repository
       taskRef:
+        kind: ClusterTask
         name: git-clone
       workspaces:
         - name: output
@@ -17,19 +18,20 @@ spec:
         - name: url
           value: https://github.com/cellist01/pipeline-maven.git
         - name: subdirectory
-          value: mavenbuild-test
+          value: ""
         - name: deleteExisting
           value: "true"
     - name: maven-run
       taskRef:
+        kind: ClusterTask
         name: maven
       runAfter:
         - fetch-repository
       params:
         - name: MAVEN_MIRROR_URL
-          value: http://repo1.maven.org/maven2
+          value: https://nexus.apps.ocp4.internal.local/repository/maven-public/
         - name: CONTEXT_DIR
-          value: "apps/greeter/java/quarkus"
+          value: "mavenbuild-test"
         - name: GOALS
           value:
             - -DskipTests
