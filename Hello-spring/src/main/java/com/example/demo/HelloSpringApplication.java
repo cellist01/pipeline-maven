@@ -4,7 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,10 +17,10 @@ public class HelloSpringApplication {
 
 }
 @RestController
-class GreetingController {
-    
-    @RequestMapping("/hello/{name}")
-    String hello(@PathVariable String name) {
-        return "Hello, " + name + "!";
-    }
+public class helloWorld {
+
+	@RequestMapping(value="/hello")
+	public String getHello() {
+		return "안녕";
+	}
 }
