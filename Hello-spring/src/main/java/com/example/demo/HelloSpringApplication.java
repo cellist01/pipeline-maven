@@ -16,11 +16,11 @@ public class HelloSpringApplication {
 		System.out.println("Hello World");	}
 
 }
-@RestController
-public class helloWorld {
-
-	@RequestMapping(value="/hello")
-	public String getHello() {
-		return "안녕하세요.";
-	}
+@RestController 
+public class SecondController { 
+	@RequestMapping(value = "/hellospring", method = RequestMethod.GET) 
+	public String helloSpring() { 
+		return "Hello Spring"; 
+		} 
 }
+
