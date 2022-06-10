@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class SpringTestController {
-@RequestMapping(value="/test")
+@RequestMapping(value="/hi")
 public String springTestController() {
-return "test";
+return "Hi";
 }
 }
